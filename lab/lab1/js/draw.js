@@ -89,7 +89,8 @@ Moving your mouse outside of the circle should remove the highlighting.
 ===================== */
 
 // Global Variables
-var myRectangle;
+// var myRectangle; // for single shape storage
+var myRectangles = []; // array for multiple shapes
 
 // Initialize Leaflet Draw
 var drawControl = new L.Control.Draw({
@@ -107,7 +108,49 @@ map.addControl(drawControl);
 
 // Event which is run every time Leaflet draw creates a new layer
 map.on('draw:created', function (e) {
-    var type = e.layerType; // The type of shape
-    var layer = e.layer; // The Leaflet layer for the shape
-    var id = L.stamp(layer); // The unique Leaflet ID for the layer
+
+  // if (!_.isUndefined(myRectangle)){
+  //   map.removeLayer(myRectangle)
+  // }
+
+  var type = e.layerType; // The type of shape
+  var layer = e.layer; // The Leaflet layer for the shape
+  myRectangles.push(layer); // Push layer drawn to array
+  layer.addTo(map) // Add hand-drawn rectangles to map
+  var id = L.stamp(layer); // The unique Leaflet ID for the layer
+  $("#shapes").append("<div class=\"shape\" data-leaflet-id="+id+"><h1>Current ID: "+id+"</h1></div>");
+
+  // Task 6
+  $('.shape').on('mouseover', function(e){
+    map._layers[e.currentTarget.dataset.leafletId].setStyle({color: "green"})
+  });
+  let defaultColor = "dodgerblue";
+  $('.shape').on('mouseleave', function(e){
+    map._layers[e.currentTarget.dataset.leafletId].setStyle({color: defaultColor})
+  });
+
+  // Task 7
+  layer.on('mouseover', function(){
+    let all = document.getElementsByClassName('shape')
+    _.each(all, function(elem){
+      console.log(elem.dataset.leafletId, layer._leaflet_id)
+      if (elem.dataset.leafletId == layer._leaflet_id){
+        console.log(elem)
+        elem.style.backgroundColor = "dodgerblue";
+      }
+    })
+    //     selectedId = layer._leaflet_id
+    // console.log(selectedId)
+    // console.log($('shapes[data-leaflet-id=selectedId]'))
+  });
+  layer.on('mouseout', function(e){
+    let all = document.getElementsByClassName('shape')
+    _.each(all, function(elem){
+      console.log(elem.dataset.leafletId, layer._leaflet_id)
+      if (elem.dataset.leafletId == layer._leaflet_id){
+        console.log(elem)
+        elem.style.backgroundColor = 'white';
+      }
+    })
+  })
 });
