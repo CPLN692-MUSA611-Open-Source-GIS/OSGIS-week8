@@ -11,3 +11,17 @@ var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{
   ext: 'png'
 }).addTo(map);
 
+$(document).ready(function(){
+  $('#dropdownMenuButton1').tooltip('enable')
+
+  // $("#exampleModal").click(function(){
+  //  $("#myModal").modal("show");
+
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myDIV *").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+  });
+});

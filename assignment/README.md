@@ -1,4 +1,4 @@
-# Final Project Proposal
+# Final Project Proposal: Impacts of Transit Oriented Developments
 
 Your assignment this week is to write a proposal for your final project.
 In proposing your final, try to address each of the following areas.
