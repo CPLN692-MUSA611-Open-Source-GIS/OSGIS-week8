@@ -1,5 +1,6 @@
 /* =====================
 Lab 1: Leaflet Draw
+/ 
 
 Task 1: Try to draw something on the map
 
