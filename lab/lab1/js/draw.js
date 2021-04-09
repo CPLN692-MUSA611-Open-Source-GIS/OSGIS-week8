@@ -116,6 +116,7 @@ map.on('draw:created', function (e) {
 
     map.addLayer(layer)
     myRectangles.push(layer)
+    console.log(map._layers)
 
     $('.shape').on('mouseover', function(e) {
       leafletId = $(e.currentTarget).data().leafletId
@@ -124,7 +125,14 @@ map.on('draw:created', function (e) {
 
     $('.shape').on('mouseleave', function(e) {
       leafletId = $(e.currentTarget).data().leafletId
-      map._layers[leafletId].setStyle({color:"#3388ff"})
+      //change color back
+      map._layers[leafletId].setStyle({color:"white"})
+
+      var changeHtml = `.shape[data-leaflet-id="${leafletId}"]`
+      //console.log(changeHtml)
+      //remove the text in sidebar
+      $(`${changeHtml}`).text("")
+      
       
     })
     
