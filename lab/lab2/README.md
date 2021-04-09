@@ -21,7 +21,7 @@ Your prototype must contain all three of the following components:
 
 - Dropdown //done
 - Grid/Columns //done
-- Modal //done but can't figure out how to not write js by myself
+- Modal //done
 
 ### Choose Your Own Components
 
@@ -31,7 +31,7 @@ Your prototype should contain your choice of five of the following components.
 - Input Group (Forms > Input group) //done
 - Button Group (Components > Buttons && Forms > Input group > Button addons) //done
 - Icons (https://icons.getbootstrap.com/,  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">) //done
-- Floating labels (Forms > Floating labels) //done but not very successful
+- Floating labels (Forms > Floating labels) //done
 - Alert (Components > Alerts) //done
 - Tooltip (Components > Tooltips) //done
 
@@ -46,7 +46,7 @@ At the bottom of your `style.css` file you should see two media queries. Add CSS
 queries that will:
 
 - Make the sidebar slightly smaller and the map slightly larger when the screen width is between
-  800px and 480px
+  800px and 480px //done
 - Remove the sidebar entirely and have the map take up the full screen when the width is smaller than
-  480px
+  480px //done
 

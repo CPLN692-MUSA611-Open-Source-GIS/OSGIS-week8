@@ -13,6 +13,7 @@
   </head>
   <body>
     <!-- Sidebar -->
+    <!-- Button trigger modal -->
     <div class="sidebar container">
       <div class="row">
         <div class="col-4">
@@ -34,12 +35,12 @@
         </div>
         <div class="col-8">
           <div class="topright-button" style="float: right">
-            <div class="dropdown">
-              <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" 
-              data-toggle="tooltip" data-placement="top" title="click me">
-                Add New
+            <div class="btn-group">
+              <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-placement="top" title="click me">Add New</button>
+              <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-placement="top" title="dropdown">
+                <span class="visually-hidden">Toggle Dropdown</span>
               </button>
-              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
+              <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">View History</a></li>
                 <li><a class="dropdown-item" href="#">Email All Manufacturers</a></li>
               </ul>
@@ -48,7 +49,7 @@
           <nav class="navbar navbar-default row-3">
             <div class="container-fluid clearfix">
               <div class="navbar-header">
-                <a href="#">Manufacturers</a>
+                <h5>Manufacturers</h5>
               </div>
             </div>
           </nav>
@@ -59,18 +60,17 @@
               <i class="bi bi-search"></i>
             </span>
           </div>
-          <div class="item row">
+          <div class="item row" id="myDIV">
             <h2 class="item-heading">Tandy’s Basketweavers</h2>
             <div>490 Freedom Drive<br>
             Philadelphia, PA 19425</div>
             <!-- Modal Button-->
-            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal" id="exampleModal" 
-            data-toggle="tooltip" data-placement="top" title="this will open a modal">
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="tooltip" data-placement="top" title="this will open up a modal">
               Low Inventory
             </button>
             <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg" role="document">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Manufacturer</h5>
