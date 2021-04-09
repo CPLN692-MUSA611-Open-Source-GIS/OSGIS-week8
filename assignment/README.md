@@ -74,6 +74,7 @@ Note:
 
 - Map with floating windows?
 - GEE app with drawing tools?
+- Allow user to zoomin/out to different display contents with clickable features
 
 ## Anticipated difficulties
 
