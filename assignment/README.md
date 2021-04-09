@@ -7,11 +7,11 @@ The US Department of Transportation's Federal Transit Adminstration maintains da
 
 ## The data
 
-The dataset is relatively small (3MB in a csv format) and additional variables from the ACS can be included at the metro-area (UZA) level as the data is already tagged with this. This would allow for ridership to be normalized across variables like population and service area.
+The dataset is relatively small (3MB in a csv format) and additional variables from the ACS can be included at the metro-area (UZA) level as the data is already tagged with this. This would allow for ridership to be normalized across variables like population and service area. Source: https://www.transit.dot.gov/ntd/data-product/monthly-module-adjusted-data-release
 
 ## Technologies used
 
-I plan to base this off a Bootstrap dashboard example and build out custom graphs for these variables. Some jquery and/or underscore functions will be necessary to filter and compare the data. The dataset itself can be kept within the repo. Leaflet can be used for various map visuals including chloropleth and bubble maps to visualize ridership at the metro-area level.
+I plan to base this off a Bootstrap dashboard example and build out custom graphs for these variables. Some jquery and/or underscore functions will be necessary to filter and compare the data. The dataset itself can be kept within the repo. Leaflet can be used for various map visuals including chloropleth and bubble maps to visualize ridership at the metro-area level. Example: https://getbootstrap.com/docs/5.0/examples/dashboard/
 
 ## Design spec
 
