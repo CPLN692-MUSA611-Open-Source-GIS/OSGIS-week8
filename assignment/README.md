@@ -1,67 +1,57 @@
-# Final Project Proposal
-
-Your assignment this week is to write a proposal for your final project.
-In proposing your final, try to address each of the following areas.
-Please produce at least a paragraph which addresses the topics below
+# Final Project Proposal: NTD Ridership Dashboard
+Ben Dodson
 
 ## Problem / Question
 
-Applications are ultimately just tools. What problem or question does
-your application attempt to resolve or grapple with? How does your
-application speak to this problem/question?
+The US Department of Transportation's Federal Transit Adminstration maintains data on the nation's public transit operations through the National Transit Database (NTD). Versions of the NTD are published on a annual and monthly basis. Ridership is one metric that is published on a monthly basis. The FTA does not maintain an API for this data so it requires a manual process to download, format, and visualize the data. My solution is to create a dashboard on the ridership data to make this dataset more accessible to all. With large swings in ridership during the past few months' period of decline and growth, this data is extremely valuable to transportation planners. The NTD enables comparisons across services to see if peer agencies or services within an agency are experiencing the same ridership trends. I personally use this data on a regular basis to provide estimates of commuter rail ridership in the Northeast. The dashboard will enable the ability to view ridership statistics for all agencies, by month, mode, and whether the service is directly operated or contracted out and comparisons across these categories.
 
 ## The data
 
-Geospatial applications are all about working with data. What datasets
-would you plan/like to use? If the data you'll be working with isn't
-already stored in a way that you can use, how will you be storing your data?
-If your data is too large to be conveniently used on the frontend, how will
-you work around it? A backend? Vector tiles? Chat with me ASAP if this is
-something you need help with!
+The dataset is relatively small (3MB in a csv format) and additional variables from the ACS can be included at the metro-area (UZA) level as the data is already tagged with this. This would allow for ridership to be normalized across variables like population and service area.
 
 ## Technologies used
 
-Which technologies covered in class (or discovered on your own!) do you
-plan to use? How do you anticipate using each of these technologies?
-
-Review the APIs/online examples of leaflet, turf, jQuery, underscore (or
-any library not explicitly covered in class) for functions/uses which
-you'd like to explore. Briefly describe how you might use them.
+I plan to base this off a Bootstrap dashboard example and build out custom graphs for these variables. Some jquery and/or underscore functions will be necessary to filter and compare the data. The dataset itself can be kept within the repo. Leaflet can be used for various map visuals including chloropleth and bubble maps to visualize ridership at the metro-area level.
 
 ## Design spec
 
 #### User experience
 
-At a high level, how do you expect people to use your application?
-- Who are the users?
-- What do they gain from your application' use?
-- Are there any website/application examples in the wild to which you can compare your final?
+This dashboard would be very helpful to transportation planners and policy makers who are monitoring the trends in public transit ridership around the country. Higher than average ridership could be an indictator of recovery in an area and may reflect other externalities like local or modal hesistancy towards returning to transit and the return of office commuters. The dashboard will be setup in a way, through the language used, to be publically-digestable without any technical backgorund in transportation planning. This would allow people outside of the immediate industry such as real estate developers and economic development analysts to understand how public transit ridership can be an indicator of economic activity.
 
 #### Layouts and visual design
 
-So far, we've built all our applications with a side bar for
-representing non-map content and navigation. This is not the only
-successful design. Extra content could be displayed in a top bar,
-through modals, through side bars on both sides, and any combination of
-these as well as a number not mentioned. Try to describe your
-application's visual layout. Conceptually (no need for extensive CSS
-here), what will this design require?
+This dashboard will involve a vertical, top-level navigation bar allowing the user to thumb through the different cuts of the data. Ideally, the view of the data on each dashboard page will grow more focused as the user moves down the list of pages. 
+
+- Landing Page (Orienting the user to the site and how to use)
+- National View
+    - Map of US with bubbles representing transit ridership for each metro area
+    - Line graph showing total transit ridership over last 3, 5, and 10 years
+    - Cards or pie graph showing totals by mode, largest transit operator
+- Modal View
+    - Public transit mode dropdown
+    - Graph showing total ridership for that mode
+    - Breakdown of directly operated versus contracted operations
+    - Map of ridership
+    - Graph displaying how this mode compares to others
+- Metro Area View
+    - Metro area dropdown
+    - Modal profile of the metro area
+    - Operations breakdown of the metro area
+    - Chart of ridership
+    - Metro area basic details from ACS (size, pop, income, primary mode to work breakdown)
+    - Graph displaying how this metro area compares to others
+- Operator View
+    - Dropdown of top 30 largest operators
+    - Breakdown of ridership on that system
+    - Breakdown of operations (direct or contracted)
+    - Chart showing ridership by mode
+    - Graph displaying how this operator compares to the other top 30
 
 ## Anticipated difficulties
 
-Thinking about weaknesses can be useful. What do you anticipate being
-most difficult about this project? How will you attempt to cope with
-these difficulties? For example, asynchronous behavior (ajax, events)
-are hard to use and think about. Global variables are a strategy for
-coping with that difficulty by breaking data out of the asynchronous
-context.
+I will have to explore the best solutions for the graphing parts of this dashboard. I am familiar with the basic graphs (bar, line, pie) but there may be some interactive infographics that could prove a better visualization of this data and better take advantage of the fact it is an interactive platform.
 
 ## Missing pieces
 
-We've only managed to scratch the surface of the available technologies
-by which you could construct an application. What use-cases haven't we covered
-that you think would be useful? What technologies not covered seem exciting to
-you (you don't necessarily have to fully understand what they're for,
-this is a chance for you to get help interpreting a technology's
-purpose/usage).
-
+Overview of graphing packages would be helpful!
