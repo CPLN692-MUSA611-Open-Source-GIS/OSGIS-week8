@@ -5,9 +5,9 @@ body {
 }
 
 .map {
-    position: absolute;
-    right: 0px;
-    left: 340px;
+    position: relative;
+    right: 0;
+    /* left: 340px; */
     height: 100%;
     top: 0;
 }
@@ -39,10 +39,10 @@ body {
 }
 
 .sort {
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
-    left: 0;
-    width: 340px;
+    /* left: 0; */
+    /* width: 340px; */
     background-color: #fff;
     padding: 20px;
 }
@@ -69,18 +69,29 @@ body {
     font-weight: bold;
 }
 
+.alert{
+    background-color:firebrick;
+    color:floralwhite;
+}
+
 /* =============
 Media Queries
 ============= */
 
 @media screen and (min-width: 480px) and (max-width: 800px) {
-    /*.item {
+    .item {
         background-color: blue;
-    }*/
+    }
+    .col-2{
+        display: none;
+    }
+    .col-7{
+        width: 75%;
+    }
 }
 
 @media screen and (max-width: 479px) {
-    /*.item {
+    .item {
         background-color: red;
     }*/
 }
