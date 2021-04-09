@@ -89,25 +89,35 @@ Moving your mouse outside of the circle should remove the highlighting.
 ===================== */
 
 // Global Variables
-var myRectangle;
+var myRectangles = []
 
 // Initialize Leaflet Draw
 var drawControl = new L.Control.Draw({
-  draw: {
-    polyline: false,
-    polygon: false,
-    circle: false,
-    marker: false,
-    circlemarker: false,
-    rectangle: true
-  }
+    draw: {
+        polyline: false,
+        polygon: false,
+        circle: false,
+        marker: false,
+        circlemarker: false,
+        rectangle: true
+    }
 });
 
 map.addControl(drawControl);
 
 // Event which is run every time Leaflet draw creates a new layer
-map.on('draw:created', function (e) {
+map.on('draw:created', function(e) {
     var type = e.layerType; // The type of shape
     var layer = e.layer; // The Leaflet layer for the shape
     var id = L.stamp(layer); // The unique Leaflet ID for the layer
+    var theHtml = `<div class="shape" data-leaflet-id="${id}"><h1>Current ID: ${id}</h1></div>`
+    $('#shapes').append(theHtml)
+    $('.shape').on('mouseover', function(e) {
+        leafletId = $(e.currentTarget).data().leafletID
+        map._layers[leafletId].setStyle({ color: "red" })
+    })
+
+    map.addLayer(layer)
+    myRectangles.push(layer)
+    console.log(myRectangles)
 });
