@@ -7,25 +7,35 @@ body {
 .map {
     position: absolute;
     right: 0px;
-    left: 340px;
+    left: 540px;
     height: 100%;
     top: 0;
+}
+
+.list-group-item {
+    background-color: transparent;
+    color: white;
+}
+
+.list-group-item-action.active {
+    background-color: #a8dadc;
+    border-color: #a8dadc
+    color: white;
 }
 
 .sidebar {
     position: absolute;
     left: 0px;
-    width: 340px;
+    width: 540px;
     top: 0;
     bottom: 0;
     overflow-y: auto;
-    padding: 20px;
-    padding-bottom: 60px;
 }
 
 .item {
-    padding: 10px;
-    background-color: #eee;
+    margin: 5px;
+    background-color: #e8e8e4;
+    padding:5px;
 }
 
 .item:not(:last-child) {
@@ -41,10 +51,10 @@ body {
 .sort {
     position: fixed;
     bottom: 0;
-    left: 0;
+
     width: 340px;
     background-color: #fff;
-    padding: 20px;
+    padding: 5px;
 }
 
 .sort-option {
@@ -52,16 +62,34 @@ body {
 }
 
 .sort-option.selected {
+    font-weight: bold;
     border-bottom: 1px solid #ccc;
+}
+
+.container {
+    background-color: #d8e2dc;
 }
 
 .sidebar nav.navbar-default {
     border: 0;
     border-radius: 0;
-    background-color: #fff;
     border-bottom: 1px solid #eee;
-    margin: -14px -20px 20px;
-    padding: 10px 20px 15px;
+}
+
+.col-4 {
+    background-color: #1d3557;
+    padding-bottom: 100%; 
+    margin-bottom: -100%;
+}
+
+.col-8 {
+    background-color: white;
+    padding-bottom: 100%; 
+    margin-bottom: -100%;
+}
+
+.dropdown-menu {
+    text-align: right
 }
 
 .navbar-brand {
@@ -69,6 +97,19 @@ body {
     font-weight: bold;
 }
 
+#floatingInput {
+    height: auto;
+}
+
+#sales {
+    font-size: 100px;
+    color: #457b9d;
+}
+
+#dropdownMenuButton1 {
+    background-color: #457b9d;
+    border-color: #457b9d;
+}
 /* =============
 Media Queries
 ============= */
@@ -77,10 +118,56 @@ Media Queries
     /*.item {
         background-color: blue;
     }*/
+    .map {
+        position: absolute;
+        right: 0px;
+        left: 300px;
+        height: 100%;
+        top: 0;
+    }
+
+    .sidebar {
+        position: absolute;
+        left: 0px;
+        width: 300px;
+        top: 0;
+        bottom: 0;
+        overflow-y: auto;
+    }
+
+    .col-4 {
+        background-color: #1d3557;
+        padding-bottom: 100%; 
+        margin-bottom: -100%;
+        width: 100%;
+    }
+    .col-8 {
+        background-color: white;
+        padding-bottom: 100%; 
+        margin-bottom: -100%;
+        width:100%;
+    }
+
 }
 
 @media screen and (max-width: 479px) {
     /*.item {
         background-color: red;
     }*/
+    .map {
+        position: absolute;
+        right: 0px;
+        left: 0px;
+        height: 100%;
+        top: 0;
+    }
+
+    .sidebar {
+        position: absolute;
+        left: 0px;
+        width: 0px;
+        top: 0;
+        bottom: 0;
+        overflow-y: auto;
+    }
 }
