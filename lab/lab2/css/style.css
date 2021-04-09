@@ -7,14 +7,14 @@ body {
 .map {
     position: absolute;
     right: 0px;
-    left: 340px;
+    left: 55%;
     height: 100%;
     top: 0;
 }
 
 .sidebar {
     position: absolute;
-    left: 0px;
+    left: 22%;
     width: 340px;
     top: 0;
     bottom: 0;
@@ -40,11 +40,10 @@ body {
 
 .sort {
     position: fixed;
-    bottom: 0;
-    left: 0;
+    bottom: 5%;
     width: 340px;
     background-color: #fff;
-    padding: 20px;
+    padding: 5px;
 }
 
 .sort-option {
@@ -69,6 +68,84 @@ body {
     font-weight: bold;
 }
 
+.navbar-header {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.sidebar-container{
+    position: absolute;
+    right: 45%;
+    width: 55%;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    border-style: solid;
+}
+
+.col-left{
+    padding-bottom: 100%; 
+    margin-bottom: -100%;
+    border-color:rgb(94, 105, 110);
+    border-style: solid;
+    width:40%;
+    background:rgb(94, 105, 110);
+}
+
+.col-right{
+    padding-bottom: 100%; 
+    margin-bottom: -100%;
+    border-color:black;
+    border-style: solid;
+    width:60%;
+
+}
+
+.dropdown{
+    position: absolute;
+    right:0;
+}
+
+.row-c{
+    font-size: 18px;
+    color:rgb(226, 240, 248);
+    border-color:rgb(0, 0, 0);
+    border-style: solid;
+    padding: 10px 20px 15px;
+}
+
+.btn-btn-primary{
+    background-color: red;
+    border-color:red;
+    color:white
+}
+
+.modal-title{
+    font-size: 16px;
+}
+
+.alert{
+    background-color: red;
+    border-color:red;
+    color:white
+}
+
+.manu-title{
+    font-size: 20px;
+}
+
+.col-m{
+    font-size:14px;
+}
+
+.one-selection{
+    right:0;
+}
+
+.modal-content{
+    width: 600px;
+}
+
 /* =============
 Media Queries
 ============= */
@@ -77,10 +154,35 @@ Media Queries
     /*.item {
         background-color: blue;
     }*/
+    .sidebar-container{
+        position: absolute;
+        right: 60%;
+        width: 55%;
+        top: 0;
+        bottom: 0;
+        overflow-y: auto;
+        border-style: solid;
+    }
+
+    .map {
+        position: absolute;
+        right: 0px;
+        left: 40%;
+        height: 100%;
+        top: 0;
+    }
 }
 
 @media screen and (max-width: 479px) {
     /*.item {
         background-color: red;
     }*/
+    .map {
+        position: absolute;
+        right: 0%;
+        left: 0%;
+        height: 100%;
+        top: 0%;
+        bottom:0%
+    }
 }
