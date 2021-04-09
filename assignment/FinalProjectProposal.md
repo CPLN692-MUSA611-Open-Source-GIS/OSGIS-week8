@@ -75,6 +75,7 @@ Note:
 - Map with floating windows?
 - GEE app with drawing tools?
 - Allow user to zoomin/out to different display contents with clickable features
+- Switches to turn on/off route-finding, drawing, and other functionalities of this application.
 
 ## Anticipated difficulties
 
