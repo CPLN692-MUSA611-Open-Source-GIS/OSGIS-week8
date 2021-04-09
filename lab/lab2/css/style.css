@@ -7,15 +7,15 @@ body {
 .map {
     position: absolute;
     right: 0px;
-    left: 340px;
+    left: 540px;
     height: 100%;
     top: 0;
 }
 
 .sidebar {
     position: absolute;
-    left: 0px;
-    width: 340px;
+    left: 160px;
+    width: 380px;
     top: 0;
     bottom: 0;
     overflow-y: auto;
@@ -23,9 +23,40 @@ body {
     padding-bottom: 60px;
 }
 
+.sidemenu {
+    position: absolute;
+    left: 0px;
+    width: 160px;
+    top: 0;
+    bottom: 0;
+    padding: 20px 0px 0px 0px;
+    background-color: #233241;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #4c9cac;
+}
+
+.nav-link {
+    color: white
+}
+
+.btn-info {
+    background-color: #4c9cac;
+    border-color: white;
+    color: white;
+}
+
 .item {
+    width: 340px;
     padding: 10px;
     background-color: #eee;
+}
+
+.badge {
+    background-color: #d13f53;
 }
 
 .item:not(:last-child) {
@@ -41,8 +72,8 @@ body {
 .sort {
     position: fixed;
     bottom: 0;
-    left: 0;
-    width: 340px;
+    left: 160;
+    width: 380px;
     background-color: #fff;
     padding: 20px;
 }
@@ -69,6 +100,17 @@ body {
     font-weight: bold;
 }
 
+#basketNum {
+    font-size: 100;
+    color: #80ced6;
+}
+
+#basketicon {
+    width: 160px;
+    margin: 0px;
+}
+
+
 /* =============
 Media Queries
 ============= */
@@ -77,10 +119,46 @@ Media Queries
     /*.item {
         background-color: blue;
     }*/
+    .map {
+        position: absolute;
+        right: 0px;
+        left: 500px;
+        height: 100%;
+        top: 0;
+    }
+    .sidebar {
+        position: absolute;
+        left: 130px;
+        width: 340px;
+        top: 0;
+        bottom: 0;
+        overflow-y: auto;
+        padding: 20px;
+        padding-bottom: 60px;
+    }
+    .sidemenu {
+        position: absolute;
+        left: 0px;
+        width: 150px;
+        top: 0;
+        bottom: 0;
+        padding: 20px 0px 0px 0px;
+    }
+    .item {
+        width: 300px;
+        padding: 10px;
+        background-color: #eee;
+    }
 }
 
 @media screen and (max-width: 479px) {
     /*.item {
         background-color: red;
     }*/
+    .sidebar {
+        display: none;
+    }
+    .sidemenu {
+        display: none;
+    }
 }
