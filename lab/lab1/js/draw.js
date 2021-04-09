@@ -90,6 +90,7 @@ Moving your mouse outside of the circle should remove the highlighting.
 
 // Global Variables
 var myRectangle;
+var myRectangles = [];
 
 // Initialize Leaflet Draw
 var drawControl = new L.Control.Draw({
@@ -109,5 +110,36 @@ map.addControl(drawControl);
 map.on('draw:created', function (e) {
     var type = e.layerType; // The type of shape
     var layer = e.layer; // The Leaflet layer for the shape
-    var id = L.stamp(layer); // The unique Leaflet ID for the layer
+    var id = L.stamp(layer)
+    var theHtml = `<div class="shape" data-leaflet-id=${id}><h1>Current ID:${id}</h1></div>`//template string
+    $('.shape').on('mouseover', function(e){
+      leafletId = $(e.currentTarget).data().leafletId
+      map._layers[leafletId]. setStyle({color: "red"})
+    })
+
+    $('.shape').on('mouseleave', function(e) {
+      leafletId = $(e.currentTarget).data().leafletId
+      map._layers[leafletId]. setStyle({color: "blue"})
+    })
+
+    //_.isUndefined()
+    // if (myRectangle) {
+    //   map.removeLayer(myRectangle)
+    // }
+    myRectangle = layer
+    map.addLayer(myRectangle)
+
+    //$('#shapes').text(`{id}`)
+    $('#shapes').append( `${theHtml}` )
+    myRectangles.push(myRectangle)
+     //The unique Leaflet ID for the layer
+     layer.on('mouseover', function(e) {
+       leafletid = String(e.target._leaflet_id);
+       $('#' +  leafletid).css({'color': 'red'})
+     })
+     layer.on('mouseout', function(e) {
+       leafletid = String(e.target._leaflet_id);
+       $('#' +  leafletid).css({'color': 'black'})
+     })
+
 });
