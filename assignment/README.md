@@ -1,67 +1,59 @@
 # Final Project Proposal
 
-Your assignment this week is to write a proposal for your final project.
-In proposing your final, try to address each of the following areas.
-Please produce at least a paragraph which addresses the topics below
+Zirui Chen & Haoheng tang
 
 ## Problem / Question
 
-Applications are ultimately just tools. What problem or question does
-your application attempt to resolve or grapple with? How does your
-application speak to this problem/question?
+Currently, the Fire Department has litte ‘situational awareness’ of 
+fire risk for a given location when an emergency call comes in. 
+Therefore, we are going to help them build a web application that can
+gather property infomation, nearest past fire events, violation information,
+311 requests, neighborhood information as well as the fire risk given an 
+address of a fire event, which can help fire fighter better lead their rescue work.
 
 ## The data
 
-Geospatial applications are all about working with data. What datasets
-would you plan/like to use? If the data you'll be working with isn't
-already stored in a way that you can use, how will you be storing your data?
-If your data is too large to be conveniently used on the frontend, how will
-you work around it? A backend? Vector tiles? Chat with me ASAP if this is
-something you need help with!
+We plan to use the API that we built in MUSA practicum. The API can accquire 
+property data, code violaiton, cencus data, 311 requests and the fire risk that
+we predict all together.
+
+Since the API was built by accquireing data from other API / dataset, we want to include
+them here:
+1.Philadelphia fire 2015-2020
+2.https://cityofphiladelphia.github.io/carto-api-explorer/#public_cases_fc
+3.https://cityofphiladelphia.github.io/carto-api-explorer/#violations
+4.https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/DOR_Parcel/FeatureServer/0/query?outFields=*&where=1%3D1
 
 ## Technologies used
 
-Which technologies covered in class (or discovered on your own!) do you
-plan to use? How do you anticipate using each of these technologies?
-
-Review the APIs/online examples of leaflet, turf, jQuery, underscore (or
-any library not explicitly covered in class) for functions/uses which
-you'd like to explore. Briefly describe how you might use them.
+(1)leaflet: maps
+(2)underscore: data wrangling
+(3)JQuery: make html elements interactive
+(4)bootstrap
+(5)Vector tiles?
 
 ## Design spec
 
 #### User experience
 
-At a high level, how do you expect people to use your application?
-- Who are the users?
-- What do they gain from your application' use?
-- Are there any website/application examples in the wild to which you can compare your final?
+- Users: fire fighters who is going to lead rescue work or do daily check for the fire risk
+ or residents who want to know the risk of their houses
+- Gain: fire fighters can have more information about the property and its surrounding
+- Past example？
+ 
 
 #### Layouts and visual design
 
-So far, we've built all our applications with a side bar for
-representing non-map content and navigation. This is not the only
-successful design. Extra content could be displayed in a top bar,
-through modals, through side bars on both sides, and any combination of
-these as well as a number not mentioned. Try to describe your
-application's visual layout. Conceptually (no need for extensive CSS
-here), what will this design require?
+![interface_1](interface_1.png)
+
+![interface_2](interface2.png)
 
 ## Anticipated difficulties
 
-Thinking about weaknesses can be useful. What do you anticipate being
-most difficult about this project? How will you attempt to cope with
-these difficulties? For example, asynchronous behavior (ajax, events)
-are hard to use and think about. Global variables are a strategy for
-coping with that difficulty by breaking data out of the asynchronous
-context.
+Currently our difficulty is: 
+(1)How to deal with the large amount of parcel data?
+(2)Figuring out how to use the API that we built (we are still trying to put it on the clould) to get data. 
 
 ## Missing pieces
 
-We've only managed to scratch the surface of the available technologies
-by which you could construct an application. What use-cases haven't we covered
-that you think would be useful? What technologies not covered seem exciting to
-you (you don't necessarily have to fully understand what they're for,
-this is a chance for you to get help interpreting a technology's
-purpose/usage).
 
