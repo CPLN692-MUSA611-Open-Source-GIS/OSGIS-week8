@@ -44,15 +44,13 @@ them here:
 
 #### Layouts and visual design
 
-![interface_1](interface_1.png)
-
-![interface_2](interface2.png)
+![interface](interface.png)
 
 ## Anticipated difficulties
 
 Currently our difficulty is: 
 (1)How to deal with the large amount of parcel data?
-(2)Figuring out how to use the API that we built (we are still trying to put it on the clould) to get data. 
+(2)Figuring out how to use the API that we built (we are still trying to deploy it to the cloud) to get data. 
 
 ## Missing pieces
 
