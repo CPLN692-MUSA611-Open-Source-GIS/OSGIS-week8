@@ -128,7 +128,7 @@ map.on('draw:created', function (e) {
     myRectangles.push(layer)
     layer.addTo(map);
 
-
+    $(".shape").unbind();
     //Task 6
     $('.shape').on('mouseover',function(e){
        leafletId = $(e.currentTarget).data().leafletId
@@ -146,7 +146,7 @@ map.on('draw:created', function (e) {
         leafletId = e.target._leaflet_id
          var str = "div[data-leaflet-id=" + String(leafletId) + "]"
          $(str).css('color', 'red')
-      })        
+      })       
     })
 
     myRectangles.forEach(function(item){
