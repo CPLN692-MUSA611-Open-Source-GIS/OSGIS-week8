@@ -11,3 +11,13 @@ var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{
   ext: 'png'
 }).addTo(map);
 
+$('a[href$="#exampleModal2"]').on( "click", function() {
+  $('#exampleModal2').modal('show');
+});
+
+var tooltipTriggerList = [].slice.call(
+  document.querySelectorAll('[data-toggle="tooltip"]')
+);
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl);
+});
