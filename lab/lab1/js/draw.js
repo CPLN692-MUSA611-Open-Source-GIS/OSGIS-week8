@@ -116,6 +116,7 @@ map.on('draw:created', function (e) {
     //Task 3
     if(myRectangles.length==0){
       layer.addTo(map)
+      //Task 5
       myRectangles.push(layer)
 
       //Task 4
@@ -133,5 +134,30 @@ map.on('draw:created', function (e) {
         $('#shapes').append(html)
       }
     }
+
+   // Task 6
+   $(".shape").click(function(e){
+     var ID= $(e.currentTarget).data("leafletId")
+     map._layers[ID].setStyle({fillColor:"pink"})
+   })
+
+   // Task 7
+   myRectangles.forEach(function(item){
+    item.on("mouseover", function(e){
+      leafletId = e.target._leaflet_id
+       var str = "div[data-leaflet-id=" + String(leafletId) + "]"
+       $(str).css('color', 'pink')
+       console.log(e.type)
+    })       
+  })
+
+  myRectangles.forEach(function(item){
+    item.on("mouseout", function(e){
+      leafletId = e.target._leaflet_id
+       var str = "div[data-leaflet-id=" + String(leafletId) + "]"
+       $(str).css('color', 'black')
+       console.log(e.type)
+    })        
+  })
 
 });
