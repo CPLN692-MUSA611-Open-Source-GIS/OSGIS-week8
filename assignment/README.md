@@ -6,55 +6,47 @@ Please produce at least a paragraph which addresses the topics below
 
 ## Problem / Question
 
-Applications are ultimately just tools. What problem or question does
-your application attempt to resolve or grapple with? How does your
-application speak to this problem/question?
+Crimes of all kinds happen every day in Philadelphia. 
+How many cases occur every day? What kind of cases are more numerous? And in which areas are they located? 
+So I hope this final project will provide a simple overview of the crime situation in Philadelphia for users to check.
 
 ## The data
 
-Geospatial applications are all about working with data. What datasets
-would you plan/like to use? If the data you'll be working with isn't
-already stored in a way that you can use, how will you be storing your data?
-If your data is too large to be conveniently used on the frontend, how will
-you work around it? A backend? Vector tiles? Chat with me ASAP if this is
-something you need help with!
+The first is a geojson of the Philadelphia police district, as a way to show the crime divisions. 
+The second is the crime incidents dataset, which has been updated daily since 2006 and has over 20,000 records in 2021 alone. Therefore, in order to avoid lagging when displaying the map, 
+I will use the API to query and display the crimes that occurred in the last 7 days on the map.
 
 ## Technologies used
 
-Which technologies covered in class (or discovered on your own!) do you
-plan to use? How do you anticipate using each of these technologies?
 
-Review the APIs/online examples of leaflet, turf, jQuery, underscore (or
-any library not explicitly covered in class) for functions/uses which
-you'd like to explore. Briefly describe how you might use them.
+-leaflet to display the map and related elements
+-jQuery for dataloading
+-underscore as one of libraries to complete basic functions
+-API to request data
+-boorstrap for a better design and display for the website
+-chart to display data
 
 ## Design spec
 
 #### User experience
 
-At a high level, how do you expect people to use your application?
-- Who are the users?
-- What do they gain from your application' use?
-- Are there any website/application examples in the wild to which you can compare your final?
+This program is mainly for users who are curious about the crime situation in Philadelphia.
+
+They will get an overview of crime in Philadelphia for the past week from the application, learning the specific number and breakdown of crimes in each district. They can also check the types of cases they want to know about by filtering through mutual attacks.
+
+There are websites designed are actually fancier version of my application.
+-https://www.neighborhoodscout.com/pa/philadelphia/crime#data
+-http://data.philly.com/philly/crime/?
 
 #### Layouts and visual design
 
-So far, we've built all our applications with a side bar for
-representing non-map content and navigation. This is not the only
-successful design. Extra content could be displayed in a top bar,
-through modals, through side bars on both sides, and any combination of
-these as well as a number not mentioned. Try to describe your
-application's visual layout. Conceptually (no need for extensive CSS
-here), what will this design require?
+The page will set a header with a logo in the upper left corner and a HELP button（display by modal） in the upper right corner. 
+Also a sidebar will be set (which can be shown/hide by the button). 
+A legend will be set on the right side to indicate the different colors to distinguish the different case types.
 
 ## Anticipated difficulties
 
-Thinking about weaknesses can be useful. What do you anticipate being
-most difficult about this project? How will you attempt to cope with
-these difficulties? For example, asynchronous behavior (ajax, events)
-are hard to use and think about. Global variables are a strategy for
-coping with that difficulty by breaking data out of the asynchronous
-context.
+Handling data will be more difficult. Although only 7 days of information are currently set up, there are usually nearly 2,000 entries. Also, it is planned to add to let USER self-search the criminal records of different dates, which will also make the processing of DATA more difficult. If it is smoother, we hope to generate the heat intensity of crime density to show the security of different blocks more visually.
 
 ## Missing pieces
 
